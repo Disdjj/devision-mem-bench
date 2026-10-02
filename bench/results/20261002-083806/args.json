@@ -1,0 +1,14 @@
+{
+ "configs": [
+  "jev",
+  "flash-low",
+  "flash-high"
+ ],
+ "langs": [
+  "en",
+  "zh"
+ ],
+ "concurrency": 4,
+ "limit": 0,
+ "generate": true
+}

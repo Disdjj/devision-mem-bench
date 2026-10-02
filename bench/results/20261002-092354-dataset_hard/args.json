@@ -1,0 +1,16 @@
+{
+ "dataset": "bench/data/dataset_hard.json",
+ "configs": [
+  "jev",
+  "jev-fanout",
+  "flash-nothink",
+  "flash-low"
+ ],
+ "langs": [
+  "en",
+  "zh"
+ ],
+ "concurrency": 4,
+ "limit": 0,
+ "generate": false
+}

@@ -1,0 +1,4111 @@
+{
+ "meta": {
+  "generator": "deepseek-v4-pro",
+  "persona": "Ana Ferreira is a 34-year-old senior UX designer at a fintech startup in Lisbon, married to Miguel with a 5-year-old daughter Beatriz and a dog named Sushi. She is learning Japanese, training for a half marathon, renovating her apartment, and planning a family trip to Japan in November 2026.",
+  "dropped_ambiguous": {
+   "write": 2,
+   "recall": 0
+  },
+  "note": "gold 为 Pro 第一次盲标注；两次盲标注二元判断不一致的样本已剔除",
+  "split": "hard",
+  "recall_relevant_ids_jaccard_between_labelers": 0.871329365079365
+ },
+ "memory_bank": {
+  "en": [
+   {
+    "id": "m01",
+    "memory_type": "profile",
+    "tags": [
+     "work",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "The user's job title and employer.",
+    "content": "The user is a senior UX designer at Ledgerly, a Lisbon-based fintech startup focused on personal budgeting tools."
+   },
+   {
+    "id": "m02",
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user's immediate family members and dog.",
+    "content": "The user is married to Miguel and has a 5-year-old daughter named Beatriz. They also have a rescue dog named Sushi. Beatriz's school runs from 9:00 to 15:30 on weekdays."
+   },
+   {
+    "id": "m03",
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "food"
+    ],
+    "priority": "high",
+    "description": "The user has celiac disease.",
+    "content": "The user has celiac disease and must strictly avoid gluten. Cross-contamination is a serious concern for her."
+   },
+   {
+    "id": "m04",
+    "memory_type": "profile",
+    "tags": [
+     "learning",
+     "hobby"
+    ],
+    "priority": "medium",
+    "description": "The user is learning Japanese at an intermediate level.",
+    "content": "The user is learning Japanese and is currently around JLPT N4 level. She uses WaniKani for kanji and has weekly italki tutoring sessions."
+   },
+   {
+    "id": "m05",
+    "memory_type": "profile",
+    "tags": [
+     "travel",
+     "hobby"
+    ],
+    "priority": "low",
+    "description": "The user's favorite weekend walk in Lisbon.",
+    "content": "The user lives in the Graça neighborhood of Lisbon and often walks her dog Sushi to the Miradouro da Senhora do Monte viewpoint on weekend mornings."
+   },
+   {
+    "id": "m06",
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "work"
+    ],
+    "priority": "medium",
+    "description": "The user's husband's job and work setup.",
+    "content": "The user's husband Miguel is a data engineer at OutSystems and works a hybrid schedule with two days in the office."
+   },
+   {
+    "id": "m07",
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user has mild exercise-induced asthma.",
+    "content": "The user has mild exercise-induced asthma and uses a blue salbutamol inhaler 15 minutes before running. She carries the inhaler during all workouts."
+   },
+   {
+    "id": "m08",
+    "memory_type": "profile",
+    "tags": [
+     "finance",
+     "work"
+    ],
+    "priority": "medium",
+    "description": "The user holds employee stock options and saves a fixed salary percentage.",
+    "content": "The user holds employee stock options at Ledgerly and automatically saves 20% of her monthly salary into a separate savings account."
+   },
+   {
+    "id": "m09",
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech",
+     "schedule"
+    ],
+    "priority": "high",
+    "description": "The user is leading a mobile app redesign with a strict deadline.",
+    "content": "The user is leading the redesign of the Ledgerly mobile app, with a deadline at the end of Q3. User testing sessions are scheduled for the second week of September."
+   },
+   {
+    "id": "m10",
+    "memory_type": "project",
+    "tags": [
+     "learning",
+     "schedule",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "The user is preparing for the JLPT N4 exam in December.",
+    "content": "The user is preparing for the Japanese Language Proficiency Test N4 in December. She does 30 minutes of Anki vocabulary review every evening before bed."
+   },
+   {
+    "id": "m11",
+    "memory_type": "project",
+    "tags": [
+     "hobby",
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user is training for the Lisbon Half Marathon.",
+    "content": "The user is training for the Lisbon Half Marathon in October. Her plan includes four runs per week, with long runs on Saturday mornings."
+   },
+   {
+    "id": "m12",
+    "memory_type": "project",
+    "tags": [
+     "family",
+     "finance",
+     "schedule"
+    ],
+    "priority": "high",
+    "description": "The user is renovating her apartment kitchen and bathroom.",
+    "content": "The user is renovating the kitchen and bathroom of her Graça apartment. The total budget is €30,000, and the contractor is scheduled to start work on September 1."
+   },
+   {
+    "id": "m13",
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "finance"
+    ],
+    "priority": "medium",
+    "description": "The user has a fixed-price freelance website project for a local bakery.",
+    "content": "The user is doing a freelance project for a local gluten-free bakery, designing a simple website for a fixed price of €1,500."
+   },
+   {
+    "id": "m14",
+    "memory_type": "project",
+    "tags": [
+     "learning",
+     "hobby"
+    ],
+    "priority": "low",
+    "description": "The user is doing weekly watercolor painting with her daughter.",
+    "content": "The user is learning watercolor painting alongside her daughter Beatriz. They aim to complete one small painting together every Sunday afternoon."
+   },
+   {
+    "id": "m15",
+    "memory_type": "project",
+    "tags": [
+     "tech",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "The user is building a personal sleep tracking dashboard.",
+    "content": "The user is building a personal sleep tracking dashboard using Python and the Fitbit API. She wants to identify correlations between late screen time and poor sleep quality."
+   },
+   {
+    "id": "m16",
+    "memory_type": "project",
+    "tags": [
+     "food",
+     "family"
+    ],
+    "priority": "low",
+    "description": "The user is trying a weekly gluten-free Japanese recipe.",
+    "content": "The user is trying to cook one new gluten-free Japanese recipe each week with her family. Recent successes include tamagoyaki and chicken teriyaki with tamari."
+   },
+   {
+    "id": "m17",
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule",
+     "family"
+    ],
+    "priority": "high",
+    "description": "The user has booked a family trip to Japan for November.",
+    "content": "The user booked a family trip to Japan from November 8 to 22, 2026. Flights are TAP Lisbon to Tokyo, and the family will spend five nights in Kyoto before returning to Tokyo."
+   },
+   {
+    "id": "m18",
+    "memory_type": "event",
+    "tags": [
+     "schedule",
+     "health",
+     "hobby"
+    ],
+    "priority": "medium",
+    "description": "The user is running the Lisbon Half Marathon on October 5.",
+    "content": "The user is registered for the Lisbon Half Marathon on October 5, 2025. Her goal is to finish under 2 hours and 15 minutes."
+   },
+   {
+    "id": "m19",
+    "memory_type": "event",
+    "tags": [
+     "work",
+     "schedule",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "The user is presenting at a UX conference in Barcelona.",
+    "content": "The user is presenting a case study at a UX conference in Barcelona from September 18 to 20. Her talk is on designing accessible fintech interfaces."
+   },
+   {
+    "id": "m20",
+    "memory_type": "event",
+    "tags": [
+     "family",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user's daughter has a school play on June 14.",
+    "content": "Beatriz has a school play on June 14 at 18:00. The user and Miguel plan to attend together, and Beatriz has a small speaking role."
+   },
+   {
+    "id": "m21",
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "family",
+     "food"
+    ],
+    "priority": "low",
+    "description": "The user took a past trip to Porto with Miguel in March 2025.",
+    "content": "The user and Miguel visited Porto in March 2025 for a weekend. They stayed in the Ribeira district and especially enjoyed a port wine tasting at a small cellar in Vila Nova de Gaia."
+   },
+   {
+    "id": "m22",
+    "memory_type": "event",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user has an annual physical scheduled with Dr. Costa.",
+    "content": "The user has an annual physical appointment with Dr. Costa on July 3 at 9:30. She needs to bring her latest blood test results."
+   },
+   {
+    "id": "m23",
+    "memory_type": "event",
+    "tags": [
+     "learning",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "The user attends a weekly Japanese conversation meetup.",
+    "content": "The user attends a Japanese conversation meetup every Thursday evening at a language cafe in downtown Lisbon. She started attending in February 2026."
+   },
+   {
+    "id": "m24",
+    "memory_type": "event",
+    "tags": [
+     "food",
+     "family",
+     "schedule"
+    ],
+    "priority": "low",
+    "description": "The user has a birthday dinner for her mother on June 28.",
+    "content": "The user is organizing a birthday dinner for her mother on June 28 at 19:30. The chosen restaurant is a vegan place her mother requested, and the user must verify gluten-free options in advance."
+   },
+   {
+    "id": "m25",
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "high",
+    "description": "The user prefers gluten-free restaurants and asks about cross-contamination.",
+    "content": "The user prefers restaurants with clearly labeled gluten-free menus and always asks staff about cross-contamination practices before ordering."
+   },
+   {
+    "id": "m26",
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "The user dislikes cilantro and finds it soapy.",
+    "content": "The user strongly dislikes cilantro and says it tastes soapy to her. She asks for it to be omitted from dishes whenever possible."
+   },
+   {
+    "id": "m27",
+    "memory_type": "preference",
+    "tags": [
+     "tech",
+     "communication"
+    ],
+    "priority": "medium",
+    "description": "The user prefers Figma for UI design work.",
+    "content": "The user prefers Figma over Sketch or Adobe XD for UI design. She relies heavily on auto-layout and shared component libraries."
+   },
+   {
+    "id": "m28",
+    "memory_type": "preference",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high",
+    "description": "The user wants work-related responses to be concise and bullet-pointed.",
+    "content": "The user wants work-related answers to be concise and formatted as bullet points. The assistant should avoid emojis in professional contexts and include next steps or action items when relevant."
+   },
+   {
+    "id": "m29",
+    "memory_type": "preference",
+    "tags": [
+     "hobby",
+     "communication"
+    ],
+    "priority": "low",
+    "description": "The user likes literary fiction recommendations in Portuguese or English.",
+    "content": "The user enjoys literary fiction and prefers book recommendations in Portuguese or English. She recently liked 'The Memory Police' by Yoko Ogawa."
+   },
+   {
+    "id": "m30",
+    "memory_type": "preference",
+    "tags": [
+     "travel",
+     "food"
+    ],
+    "priority": "low",
+    "description": "The user prefers an aisle seat and gluten-free meals on flights.",
+    "content": "The user prefers an aisle seat on flights and always pre-orders a gluten-free meal. She avoids booking flights with very short layovers."
+   },
+   {
+    "id": "m31",
+    "memory_type": "preference",
+    "tags": [
+     "tech",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "The user uses dark mode and night shift after 9pm.",
+    "content": "The user enables dark mode on all devices and uses night shift settings after 21:00 to reduce eye strain. She also uses a blue light filter on her work MacBook."
+   },
+   {
+    "id": "m32",
+    "memory_type": "preference",
+    "tags": [
+     "hobby",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "The user listens to podcasts while running.",
+    "content": "The user listens to podcasts while running, especially true crime and design-related shows. Her current favorites are 'Criminal' and '99% Invisible'."
+   },
+   {
+    "id": "m33",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high",
+    "description": "The assistant must never suggest gluten-containing foods or restaurants.",
+    "content": "The user has celiac disease, so the assistant must never suggest recipes or restaurants containing gluten and must always offer gluten-free alternatives when food is discussed."
+   },
+   {
+    "id": "m34",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "family"
+    ],
+    "priority": "medium",
+    "description": "The assistant should draft formal Portuguese messages to Beatriz's school.",
+    "content": "When drafting messages to Beatriz's school, the assistant should use formal Portuguese with 'você' and keep the message under 150 words."
+   },
+   {
+    "id": "m35",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "tech"
+    ],
+    "priority": "low",
+    "description": "The assistant should include offline functionality and Portuguese support when comparing software.",
+    "content": "When comparing software or apps, the assistant should always include whether the product works offline and whether it supports Portuguese."
+   },
+   {
+    "id": "m36",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "health"
+    ],
+    "priority": "high",
+    "description": "The assistant must remind the user about her inhaler if she mentions breathing difficulty after exercise.",
+    "content": "If the user mentions breathing difficulty, wheezing, or chest tightness during or after exercise, the assistant must remind her to stop the activity and use her blue salbutamol inhaler immediately."
+   }
+  ],
+  "zh": [
+   {
+    "id": "m01",
+    "memory_type": "profile",
+    "tags": [
+     "work",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "用户的职位和雇主。",
+    "content": "用户是 Ledgerly 的高级 UX 设计师，这是一家位于里斯本的金融科技初创公司，专注于个人预算工具。"
+   },
+   {
+    "id": "m02",
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户的直系家庭成员和狗。",
+    "content": "用户与 Miguel 结婚，有一个 5 岁的女儿叫 Beatriz。他们还养了一只叫 Sushi 的救助犬。Beatriz 的学校工作日从 9:00 到 15:30。"
+   },
+   {
+    "id": "m03",
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "food"
+    ],
+    "priority": "high",
+    "description": "用户患有乳糜泻。",
+    "content": "用户患有乳糜泻，必须严格避免麸质。交叉污染对她来说是一个严重的问题。"
+   },
+   {
+    "id": "m04",
+    "memory_type": "profile",
+    "tags": [
+     "learning",
+     "hobby"
+    ],
+    "priority": "medium",
+    "description": "用户正在学习日语，水平为中级。",
+    "content": "用户正在学习日语，目前大约在 JLPT N4 水平。她用 WaniKani 学习汉字，每周有 italki 辅导课。"
+   },
+   {
+    "id": "m05",
+    "memory_type": "profile",
+    "tags": [
+     "travel",
+     "hobby"
+    ],
+    "priority": "low",
+    "description": "用户在里斯本最喜欢的周末散步路线。",
+    "content": "用户住在里斯本的 Graça 区，周末早晨经常带她的狗 Sushi 去 Miradouro da Senhora do Monte 观景台散步。"
+   },
+   {
+    "id": "m06",
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "work"
+    ],
+    "priority": "medium",
+    "description": "用户丈夫的工作和工作安排。",
+    "content": "用户的丈夫 Miguel 是 OutSystems 的数据工程师，实行混合工作制，每周两天在办公室。"
+   },
+   {
+    "id": "m07",
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户患有轻度运动诱发性哮喘。",
+    "content": "用户患有轻度运动诱发性哮喘，跑步前 15 分钟使用蓝色的沙丁胺醇吸入器。她在所有锻炼中都随身携带吸入器。"
+   },
+   {
+    "id": "m08",
+    "memory_type": "profile",
+    "tags": [
+     "finance",
+     "work"
+    ],
+    "priority": "medium",
+    "description": "用户持有员工股票期权，并储蓄固定比例的工资。",
+    "content": "用户在 Ledgerly 持有员工股票期权，并自动将月薪的 20% 存入一个单独的储蓄账户。"
+   },
+   {
+    "id": "m09",
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech",
+     "schedule"
+    ],
+    "priority": "high",
+    "description": "用户正在领导一个移动应用重新设计项目，有严格的截止日期。",
+    "content": "用户正在领导 Ledgerly 移动应用的重新设计，截止日期为第三季度末。用户测试会议安排在九月的第二周。"
+   },
+   {
+    "id": "m10",
+    "memory_type": "project",
+    "tags": [
+     "learning",
+     "schedule",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "用户正在准备十二月的 JLPT N4 考试。",
+    "content": "用户正在准备十二月的日语能力测试 N4。她每晚睡前进行 30 分钟的 Anki 词汇复习。"
+   },
+   {
+    "id": "m11",
+    "memory_type": "project",
+    "tags": [
+     "hobby",
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户正在为里斯本半程马拉松进行训练。",
+    "content": "用户正在为十月的里斯本半程马拉松进行训练。她的计划包括每周四次跑步，周六早上进行长跑。"
+   },
+   {
+    "id": "m12",
+    "memory_type": "project",
+    "tags": [
+     "family",
+     "finance",
+     "schedule"
+    ],
+    "priority": "high",
+    "description": "用户正在翻新她公寓的厨房和浴室。",
+    "content": "用户正在翻新她 Graça 公寓的厨房和浴室。总预算为 30,000 欧元，承包商计划于 9 月 1 日开始施工。"
+   },
+   {
+    "id": "m13",
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "finance"
+    ],
+    "priority": "medium",
+    "description": "用户接了个本地面包店的固定价格网站外包项目。",
+    "content": "用户正在为一家本地无麸质面包店做一个自由职业项目，以1500欧元的固定价格设计一个简单的网站。"
+   },
+   {
+    "id": "m14",
+    "memory_type": "project",
+    "tags": [
+     "learning",
+     "hobby"
+    ],
+    "priority": "low",
+    "description": "用户每周和女儿一起画水彩画。",
+    "content": "用户和她的女儿Beatriz一起学习水彩画。她们计划每周日下午一起完成一幅小画。"
+   },
+   {
+    "id": "m15",
+    "memory_type": "project",
+    "tags": [
+     "tech",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "用户正在构建一个个人睡眠追踪仪表板。",
+    "content": "用户正在使用Python和Fitbit API构建个人睡眠追踪仪表板。她想找出晚睡屏幕时间和睡眠质量差之间的关联。"
+   },
+   {
+    "id": "m16",
+    "memory_type": "project",
+    "tags": [
+     "food",
+     "family"
+    ],
+    "priority": "low",
+    "description": "用户每周尝试一道无麸质日本菜。",
+    "content": "用户每周和家人一起尝试做一道新的无麸质日本菜。最近成功的有玉子烧和用溜酱油做的照烧鸡。"
+   },
+   {
+    "id": "m17",
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule",
+     "family"
+    ],
+    "priority": "high",
+    "description": "用户已经预订了11月的日本家庭旅行。",
+    "content": "用户预订了2026年11月8日至22日的日本家庭旅行。航班是TAP从里斯本到东京，全家会在返回东京前在京都住五晚。"
+   },
+   {
+    "id": "m18",
+    "memory_type": "event",
+    "tags": [
+     "schedule",
+     "health",
+     "hobby"
+    ],
+    "priority": "medium",
+    "description": "用户将于10月5日参加里斯本半程马拉松。",
+    "content": "用户已报名参加2025年10月5日的里斯本半程马拉松。她的目标是在2小时15分钟内完成。"
+   },
+   {
+    "id": "m19",
+    "memory_type": "event",
+    "tags": [
+     "work",
+     "schedule",
+     "tech"
+    ],
+    "priority": "medium",
+    "description": "用户将在巴塞罗那的一个UX会议上做演讲。",
+    "content": "用户将于9月18日至20日在巴塞罗那的一个UX会议上展示一个案例研究。她的演讲是关于设计无障碍的金融科技界面。"
+   },
+   {
+    "id": "m20",
+    "memory_type": "event",
+    "tags": [
+     "family",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户的女儿6月14日有学校戏剧演出。",
+    "content": "Beatriz在6月14日18:00有学校戏剧演出。用户和Miguel计划一起去观看，Beatriz有一个小台词角色。"
+   },
+   {
+    "id": "m21",
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "family",
+     "food"
+    ],
+    "priority": "low",
+    "description": "用户和Miguel在2025年3月去波尔图旅行过。",
+    "content": "用户和Miguel在2025年3月的一个周末去了波尔图。他们住在里贝拉区，特别喜欢在Vila Nova de Gaia的一个小酒窖品尝波特酒。"
+   },
+   {
+    "id": "m22",
+    "memory_type": "event",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户已预约了Costa医生的年度体检。",
+    "content": "用户与Costa医生预约了7月3日9:30的年度体检。她需要带上最新的血液检查结果。"
+   },
+   {
+    "id": "m23",
+    "memory_type": "event",
+    "tags": [
+     "learning",
+     "schedule"
+    ],
+    "priority": "medium",
+    "description": "用户每周参加日语会话聚会。",
+    "content": "用户每周四晚上在里斯本市中心的一家语言咖啡馆参加日语会话聚会。她从2026年2月开始参加。"
+   },
+   {
+    "id": "m24",
+    "memory_type": "event",
+    "tags": [
+     "food",
+     "family",
+     "schedule"
+    ],
+    "priority": "low",
+    "description": "用户6月28日为她母亲准备了生日晚餐。",
+    "content": "用户正在组织6月28日19:30为她母亲举办的生日晚餐。选择的餐厅是她母亲要求的一家素食餐厅，用户需要提前确认有无麸质选项。"
+   },
+   {
+    "id": "m25",
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "high",
+    "description": "用户更喜欢无麸质餐厅，并会询问交叉污染情况。",
+    "content": "用户更喜欢菜单上明确标注无麸质的餐厅，并且点餐前总会向工作人员询问交叉污染的处理方式。"
+   },
+   {
+    "id": "m26",
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "用户不喜欢香菜，觉得它有肥皂味。",
+    "content": "用户非常不喜欢香菜，说尝起来像肥皂。她总是尽可能要求菜里不放香菜。"
+   },
+   {
+    "id": "m27",
+    "memory_type": "preference",
+    "tags": [
+     "tech",
+     "communication"
+    ],
+    "priority": "medium",
+    "description": "用户在做 UI 设计时更喜欢用 Figma。",
+    "content": "用户在 UI 设计上比起 Sketch 或 Adobe XD 更偏爱 Figma。她非常依赖自动布局和共享组件库。"
+   },
+   {
+    "id": "m28",
+    "memory_type": "preference",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high",
+    "description": "用户希望工作相关的回复简洁并采用要点列表。",
+    "content": "用户希望工作相关的回答简洁并采用要点形式。助手在专业场合应避免使用表情符号，并在相关时包含后续步骤或行动项。"
+   },
+   {
+    "id": "m29",
+    "memory_type": "preference",
+    "tags": [
+     "hobby",
+     "communication"
+    ],
+    "priority": "low",
+    "description": "用户喜欢葡萄牙语或英语的文学小说推荐。",
+    "content": "用户喜欢文学小说，更倾向于葡萄牙语或英语的书籍推荐。她最近很喜欢小川洋子的《记忆警察》。"
+   },
+   {
+    "id": "m30",
+    "memory_type": "preference",
+    "tags": [
+     "travel",
+     "food"
+    ],
+    "priority": "low",
+    "description": "用户在航班上更喜欢靠过道的座位和无麸质餐食。",
+    "content": "用户在航班上更喜欢靠过道的座位，并且总是提前预订无麸质餐食。她避免预订中转时间很短的航班。"
+   },
+   {
+    "id": "m31",
+    "memory_type": "preference",
+    "tags": [
+     "tech",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "用户在晚上9点后使用深色模式和夜览功能。",
+    "content": "用户在所有设备上开启深色模式，并在21:00后使用夜览设置以减少眼睛疲劳。她还在工作用的 MacBook 上使用蓝光滤镜。"
+   },
+   {
+    "id": "m32",
+    "memory_type": "preference",
+    "tags": [
+     "hobby",
+     "health"
+    ],
+    "priority": "medium",
+    "description": "用户在跑步时听播客。",
+    "content": "用户在跑步时听播客，尤其是真实犯罪和设计相关的节目。她目前最喜欢的是《Criminal》和《99% Invisible》。"
+   },
+   {
+    "id": "m33",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high",
+    "description": "助手绝不能建议含麸质的食物或餐厅。",
+    "content": "用户患有乳糜泻，所以助手绝不能建议含麸质的食谱或餐厅，并且在讨论食物时必须始终提供无麸质的替代方案。"
+   },
+   {
+    "id": "m34",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "family"
+    ],
+    "priority": "medium",
+    "description": "助手应为贝娅特丽斯的学校起草正式的葡萄牙语消息。",
+    "content": "在给贝娅特丽斯的学校起草消息时，助手应使用带“você”的正式葡萄牙语，并将消息控制在150字以内。"
+   },
+   {
+    "id": "m35",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "tech"
+    ],
+    "priority": "low",
+    "description": "在比较软件时，助手应包含离线功能和葡萄牙语支持。",
+    "content": "在比较软件或应用时，助手应始终说明产品是否支持离线使用以及是否支持葡萄牙语。"
+   },
+   {
+    "id": "m36",
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "health"
+    ],
+    "priority": "high",
+    "description": "如果用户提到运动后呼吸困难，助手必须提醒她使用吸入器。",
+    "content": "如果用户提到运动期间或之后出现呼吸困难、喘息或胸闷，助手必须提醒她立即停止活动并使用她的蓝色沙丁胺醇吸入器。"
+   }
+  ]
+ },
+ "write_cases": [
+  {
+   "id": "c01",
+   "context": [],
+   "message": "If I ever move to Berlin, I'd probably want a place near Tempelhofer Feld.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "travel"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c01",
+   "context": [],
+   "message": "如果我搬到柏林，我可能会想住在滕珀尔霍夫费尔德附近。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "travel"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c02",
+   "context": [],
+   "message": "Can you draft an email to my landlord about the leaky faucet? Also, I'm allergic to penicillin, so avoid suggesting antibiotics.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c02",
+   "context": [],
+   "message": "你能帮我起草一封给房东的邮件，关于水龙头漏水的问题吗？另外，我对青霉素过敏，所以不要建议抗生素。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c03",
+   "context": [],
+   "message": "I'm off coffee this week, so don't recommend coffee drinks.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health",
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c03",
+   "context": [],
+   "message": "这周我不喝咖啡，所以不要推荐咖啡饮品。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "food",
+     "health",
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c04",
+   "context": [],
+   "message": "I quit coffee for good, so never suggest coffee drinks.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c04",
+   "context": [],
+   "message": "我彻底戒了咖啡，所以永远不要推荐咖啡饮品。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "food",
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c05",
+   "context": [
+    "user: Book a flight for my Japan trip in October.",
+    "assistant: Ok, I've noted October."
+   ],
+   "message": "Scratch that, the trip moved to December.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c05",
+   "context": [
+    "user: 帮我订十月去日本的机票。",
+    "assistant: 好的，我已经记下是十月了。"
+   ],
+   "message": "算了，行程改到十二月了。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c06",
+   "context": [],
+   "message": "My colleague Joana is vegan, but I don't really care.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "work",
+     "food"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c06",
+   "context": [],
+   "message": "我的同事乔安娜是素食主义者，但我并不太在意。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "work",
+     "food"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c07",
+   "context": [],
+   "message": "My husband Miguel is allergic to peanuts, so avoid any peanut recipes.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "family",
+     "health",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c07",
+   "context": [],
+   "message": "我丈夫米格尔对花生过敏，所以避免任何含有花生的食谱。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "family",
+     "health",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c08",
+   "context": [],
+   "message": "Oh great, another Monday. I just love spending my whole day in Zoom meetings.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "work",
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c08",
+   "context": [],
+   "message": "哦，太好了，又到周一了。我就喜欢整天泡在 Zoom 会议里。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [
+     "work",
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c09",
+   "context": [],
+   "message": "I've decided I only respond to emails written in Comic Sans. That's a firm requirement.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c09",
+   "context": [],
+   "message": "我已经决定了，只回复用 Comic Sans 字体写的邮件。这是硬性要求。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c10",
+   "context": [],
+   "message": "From now on, always use British spelling in your replies.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c10",
+   "context": [],
+   "message": "从现在开始，你的回复中要始终使用英式拼写。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c11",
+   "context": [],
+   "message": "For this email, keep it under 100 words.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c11",
+   "context": [],
+   "message": "这封邮件，控制在100词以内。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c12",
+   "context": [
+    "user: I need to book a kids' party for my daughter.",
+    "assistant: Sure! So your daughter Beatriz is 5 years old, right?"
+   ],
+   "message": "Yes, that's right, Beatriz is 5.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c12",
+   "context": [
+    "user: 我需要为我女儿预订一个儿童派对。",
+    "assistant: 当然！那么你的女儿比阿特丽斯现在5岁，对吗？"
+   ],
+   "message": "是的，没错，比阿特丽斯5岁。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c13",
+   "context": [],
+   "message": "Maybe I'll pick up guitar someday, not sure though.",
+   "gold": {
+    "should_store": false,
+    "memory_type": null,
+    "tags": [
+     "hobby"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c13",
+   "context": [],
+   "message": "也许有一天我会学吉他，不过还不确定。",
+   "gold": {
+    "should_store": false,
+    "memory_type": null,
+    "tags": [
+     "hobby"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c14",
+   "context": [
+    "user: I hate cilantro, never put it in recipes.",
+    "assistant: Got it, I'll avoid cilantro."
+   ],
+   "message": "Actually I've acquired a taste for cilantro, I love it now.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c14",
+   "context": [
+    "user: 我讨厌香菜，永远不要放在食谱里。",
+    "assistant: 好的，我会避开香菜。"
+   ],
+   "message": "实际上我现在喜欢上香菜了，我现在很爱它。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c15",
+   "context": [],
+   "message": "My long run this Sunday is 12 miles, part of half marathon training.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c15",
+   "context": [],
+   "message": "我这个周日的长跑是12英里，是半程马拉松训练的一部分。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "health",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c16",
+   "context": [],
+   "message": "I have a dentist appointment tomorrow at 3pm, remind me if I mention it.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "schedule",
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c16",
+   "context": [],
+   "message": "我明天下午3点有牙医预约，如果我提到的话请提醒我。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "schedule",
+     "health"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c17",
+   "context": [],
+   "message": "I just love it when the wifi drops every 5 minutes.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "profile",
+    "tags": [
+     "tech"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c17",
+   "context": [],
+   "message": "我就是喜欢WiFi每5分钟掉线一次。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "profile",
+    "tags": [
+     "tech"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c18",
+   "context": [],
+   "message": "My manager changed the project deadline again. The new deadline is June 15 for the mobile app redesign. I can't believe how disorganized this is.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c18",
+   "context": [],
+   "message": "我的经理又改了项目截止日期。新的截止日期是6月15日，针对移动应用重新设计。我真不敢相信这有多混乱。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c20",
+   "context": [],
+   "message": "My husband just texted: 'I booked our flights to Japan for November 12, 2026.'",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "family",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c20",
+   "context": [],
+   "message": "我丈夫刚发短信说：'我订好了我们2026年11月12日去日本的机票。'",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "family",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c21",
+   "context": [],
+   "message": "For this summary, use bullet points.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c21",
+   "context": [],
+   "message": "对于这个总结，请使用要点符号。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c22",
+   "context": [],
+   "message": "Please always call me Ana, not Ms. Ferreira.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c22",
+   "context": [],
+   "message": "请一直叫我Ana，不要叫Ferreira女士。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c23",
+   "context": [],
+   "message": "My daughter Beatriz has a peanut allergy, so please no peanut snacks when we plan kids' parties.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "health",
+     "family",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c23",
+   "context": [],
+   "message": "我女儿Beatriz对花生过敏，所以我们计划儿童聚会时请不要准备花生零食。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "health",
+     "family",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c24",
+   "context": [],
+   "message": "My cousin just got a job at a bank, but I never ask him for financial advice.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "work",
+     "finance"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c24",
+   "context": [],
+   "message": "我表弟刚在银行找到工作，但我从不向他请教财务建议。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family",
+     "work",
+     "finance"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c25",
+   "context": [],
+   "message": "If I ever visit Japan in spring, I'd like to see cherry blossoms in Kyoto.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "travel"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c25",
+   "context": [],
+   "message": "如果我在春天去日本，我想在京都看樱花。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "travel"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c26",
+   "context": [],
+   "message": "Can you give me a recipe for dinner tonight? By the way, I'm lactose intolerant, so no dairy.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c26",
+   "context": [],
+   "message": "能给我一个今晚晚餐的食谱吗？顺便说一句，我乳糖不耐受，所以不要乳制品。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "health",
+     "food"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c27",
+   "context": [],
+   "message": "I'm staying off social media this month to focus.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c27",
+   "context": [],
+   "message": "我这个月要远离社交媒体，专心做事。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "schedule"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c28",
+   "context": [
+    "user: My daughter Beatriz just turned 4 last month.",
+    "assistant: Happy birthday to her!"
+   ],
+   "message": "Actually Beatriz just turned 5 last week, I mixed up the years.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c28",
+   "context": [
+    "user: 我女儿比阿特丽斯上个月刚满4岁。",
+    "assistant: 祝她生日快乐！"
+   ],
+   "message": "实际上比阿特丽斯上周刚满5岁，我搞混了年份。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "family"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c29",
+   "context": [],
+   "message": "Sure, I love spending 2 hours on hold with customer service.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c29",
+   "context": [],
+   "message": "当然，我喜欢在客服电话上等两个小时。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c30",
+   "context": [],
+   "message": "I hate cilantro with a passion; never include it in recipes.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c30",
+   "context": [],
+   "message": "我非常讨厌香菜；永远不要在食谱里放它。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "preference",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c31",
+   "context": [],
+   "message": "I finished the first prototype for my app redesign; next step is user testing.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c31",
+   "context": [],
+   "message": "我完成了应用重新设计的第一个原型；下一步是用户测试。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "project",
+    "tags": [
+     "work",
+     "tech"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c33",
+   "context": [],
+   "message": "For the next two weeks while I'm on vacation, don't suggest work-related tasks.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "work",
+     "schedule"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c33",
+   "context": [],
+   "message": "在我度假的接下来两周内，不要建议与工作相关的任务。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "work",
+     "schedule"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c34",
+   "context": [],
+   "message": "Whenever I ask for code, explain it to me like I'm a beginner.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "tech"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c34",
+   "context": [],
+   "message": "每当我要求代码时，请像对待初学者一样向我解释。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "tech"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c35",
+   "context": [
+    "assistant: Just to confirm, you're 34 years old and live in Lisbon, correct?"
+   ],
+   "message": "Yes, that's right.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c35",
+   "context": [
+    "assistant: 确认一下，你34岁，住在里斯本，对吗？"
+   ],
+   "message": "是的，没错。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c36",
+   "context": [],
+   "message": "My neighbor's dog barks all night, it's so annoying.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c36",
+   "context": [],
+   "message": "我邻居的狗整夜叫，真烦人。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "preference",
+    "tags": [],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c37",
+   "context": [],
+   "message": "When you write emails to my boss, keep them formal.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c37",
+   "context": [],
+   "message": "当你给我老板写邮件时，要保持正式。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "instruction",
+    "tags": [
+     "communication",
+     "work"
+    ],
+    "priority": "high"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c38",
+   "context": [],
+   "message": "I'm the worst cook ever, I burn water.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c38",
+   "context": [],
+   "message": "我是史上最差厨师，连水都能烧糊。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "profile",
+    "tags": [
+     "food"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c39",
+   "context": [],
+   "message": "I have a cold this week, so I sound congested.",
+   "gold": {
+    "should_store": false,
+    "memory_type": "profile",
+    "tags": [
+     "health"
+    ],
+    "priority": "low"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c39",
+   "context": [],
+   "message": "我这周感冒了，所以声音有点鼻塞。",
+   "gold": {
+    "should_store": false,
+    "memory_type": "profile",
+    "tags": [
+     "health"
+    ],
+    "priority": "low"
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "c40",
+   "context": [
+    "user: Book my flight to Tokyo for November 10.",
+    "assistant: Done, one adult ticket for November 10."
+   ],
+   "message": "Actually change that to November 12, and it's for two people.",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "en"
+  },
+  {
+   "id": "c40",
+   "context": [
+    "user: 帮我订11月10日去东京的机票。",
+    "assistant: 好的，已订好11月10日的一张成人票。"
+   ],
+   "message": "实际上改成11月12日，而且是两个人的。",
+   "gold": {
+    "should_store": true,
+    "memory_type": "event",
+    "tags": [
+     "travel",
+     "schedule"
+    ],
+    "priority": "medium"
+   },
+   "lang": "zh"
+  }
+ ],
+ "recall_cases": [
+  {
+   "id": "q01",
+   "context": [],
+   "message": "Book a table for Friday dinner for the whole family.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q01",
+   "context": [],
+   "message": "给全家订个周五晚餐的位子。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q02",
+   "context": [],
+   "message": "I want to start meal prepping lunches for work. Any ideas?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q02",
+   "context": [],
+   "message": "我想开始自己准备上班的午餐，有什么好主意吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q03",
+   "context": [],
+   "message": "What time should I leave work to pick up Beatriz?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02"
+    ],
+    "types": [
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q03",
+   "context": [],
+   "message": "我应该几点下班去接Beatriz？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02"
+    ],
+    "types": [
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q04",
+   "context": [],
+   "message": "Can we go to the park next Saturday morning as a family?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m05",
+     "m11"
+    ],
+    "types": [
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "family",
+     "health",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q04",
+   "context": [],
+   "message": "下周六早上我们全家去公园好吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m05",
+     "m11"
+    ],
+    "types": [
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "family",
+     "health",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q05",
+   "context": [],
+   "message": "I'm meeting a friend for brunch on Sunday. Where should we go?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q05",
+   "context": [],
+   "message": "我周日约了朋友吃早午餐，去哪儿好呢？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q06",
+   "context": [],
+   "message": "Recommend a good sushi restaurant in Lisbon.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q06",
+   "context": [],
+   "message": "推荐里斯本一家好吃的寿司餐厅。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q07",
+   "context": [],
+   "message": "What's the best way to train a rescue dog?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m05"
+    ],
+    "types": [
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q07",
+   "context": [],
+   "message": "训练一只被救助的狗狗，最好的方法是什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m05"
+    ],
+    "types": [
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q08",
+   "context": [],
+   "message": "Any tips for reducing screen time before bed?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m10",
+     "m15",
+     "m29",
+     "m31"
+    ],
+    "types": [
+     "preference",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q08",
+   "context": [],
+   "message": "有什么睡前减少屏幕时间的好建议吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m10",
+     "m15",
+     "m29",
+     "m31"
+    ],
+    "types": [
+     "preference",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q09",
+   "context": [],
+   "message": "I'm thinking of learning Spanish. What app should I use?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m04",
+     "m10",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q09",
+   "context": [],
+   "message": "我打算学西班牙语，用什么APP好？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m04",
+     "m10",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q10",
+   "context": [],
+   "message": "What's a good budget app for personal finance?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q10",
+   "context": [],
+   "message": "有没有好用的个人记账理财APP？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q11",
+   "context": [],
+   "message": "What should I eat before my long run?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m11",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q11",
+   "context": [],
+   "message": "跑长跑之前该吃点什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m11",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q12",
+   "context": [],
+   "message": "How can I improve my Japanese listening?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m04",
+     "m10",
+     "m17",
+     "m23",
+     "m32"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "family",
+     "health",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech",
+     "travel"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q12",
+   "context": [],
+   "message": "怎么提高我的日语听力？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m04",
+     "m10",
+     "m17",
+     "m23",
+     "m32"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "family",
+     "health",
+     "hobby",
+     "learning",
+     "schedule",
+     "tech",
+     "travel"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q13",
+   "context": [],
+   "message": "What's a good way to stay consistent with workouts?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18",
+     "m32"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q13",
+   "context": [],
+   "message": "有什么保持锻炼规律的好方法吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18",
+     "m32"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q14",
+   "context": [],
+   "message": "What should I pack for a long flight?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m07",
+     "m17",
+     "m29",
+     "m30",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q14",
+   "context": [],
+   "message": "长途飞行该带些什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m07",
+     "m17",
+     "m29",
+     "m30",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q15",
+   "context": [],
+   "message": "What phrases do I need for dietary restrictions in Portuguese?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q15",
+   "context": [],
+   "message": "关于饮食限制，我需要哪些葡萄牙语表达？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q16",
+   "context": [],
+   "message": "What's a good gift for Miguel's birthday?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m06",
+     "m17",
+     "m21"
+    ],
+    "types": [
+     "event",
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "food",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q16",
+   "context": [],
+   "message": "米格尔生日送什么礼物好？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m06",
+     "m17",
+     "m21"
+    ],
+    "types": [
+     "event",
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "food",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q17",
+   "context": [],
+   "message": "I'm thinking of buying a new laptop. Any recommendations?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m27",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q17",
+   "context": [],
+   "message": "我正考虑买台新笔记本电脑，有什么推荐吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m27",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q18",
+   "context": [],
+   "message": "Can you suggest a good yoga studio in Lisbon?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m05",
+     "m07",
+     "m11"
+    ],
+    "types": [
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q18",
+   "context": [],
+   "message": "能推荐一家里斯本好的瑜伽馆吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m05",
+     "m07",
+     "m11"
+    ],
+    "types": [
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule",
+     "travel"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q19",
+   "context": [],
+   "message": "What's a good series to watch with Miguel?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m29",
+     "m32"
+    ],
+    "types": [
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q19",
+   "context": [],
+   "message": "有什么好看的剧可以跟米格尔一起看？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m29",
+     "m32"
+    ],
+    "types": [
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q20",
+   "context": [],
+   "message": "Should I get a gym membership?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18"
+    ],
+    "types": [
+     "event",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q20",
+   "context": [],
+   "message": "我该办个健身房会员吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18"
+    ],
+    "types": [
+     "event",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q21",
+   "context": [
+    "user: I'm presenting at the UX conference in Barcelona next week."
+   ],
+   "message": "What should I pack for that trip?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m03",
+     "m07",
+     "m11",
+     "m19",
+     "m28",
+     "m29",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q21",
+   "context": [
+    "user: 我下周要在巴塞罗那的UX大会上做演讲。"
+   ],
+   "message": "那趟旅行该带些什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m03",
+     "m07",
+     "m11",
+     "m19",
+     "m28",
+     "m29",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q22",
+   "context": [
+    "user: I'm making chicken teriyaki tonight.",
+    "assistant: Make sure to use tamari instead of soy sauce."
+   ],
+   "message": "What side dish goes well with it?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q22",
+   "context": [
+    "user: 我今晚要做照烧鸡。",
+    "assistant: 记得用日式酱油代替普通酱油。"
+   ],
+   "message": "配什么配菜好呢？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q23",
+   "context": [
+    "user: I need to message Beatriz's school about missing Friday."
+   ],
+   "message": "Can you draft that message for me?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m34"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q23",
+   "context": [
+    "user: 我需要给Beatriz的学校发消息说她周五请假。"
+   ],
+   "message": "能帮我起草那条消息吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m34"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q24",
+   "context": [
+    "user: I'm registering for the Lisbon Half Marathon."
+   ],
+   "message": "What time does it start?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m18"
+    ],
+    "types": [
+     "event"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q24",
+   "context": [
+    "user: 我正在报名里斯本半程马拉松。"
+   ],
+   "message": "几点开始？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m18"
+    ],
+    "types": [
+     "event"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q25",
+   "context": [
+    "user: Book a table for Friday dinner."
+   ],
+   "message": "Yes, and make it before Beatriz's bedtime.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q25",
+   "context": [
+    "user: 订一张周五晚餐的桌子。"
+   ],
+   "message": "是的，而且要在贝娅特丽丝睡觉之前。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q26",
+   "context": [
+    "user: I need a gluten-free cake recipe for a birthday.",
+    "assistant: Whose birthday?"
+   ],
+   "message": "My mom's, and she wants vegan too.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m24",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q26",
+   "context": [
+    "user: 我需要一个生日用的无麸质蛋糕食谱。",
+    "assistant: 谁的生日？"
+   ],
+   "message": "我妈妈的，而且她还想要纯素的。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m24",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q27",
+   "context": [
+    "user: What's on my work calendar for the second week of September?",
+    "assistant: You have user testing sessions for the Ledgerly mobile app redesign that week."
+   ],
+   "message": "What should I prepare for those sessions?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m09",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q27",
+   "context": [
+    "user: 九月份第二周我的工作日历上有什么？",
+    "assistant: 那周你有 Ledgerly 移动应用重新设计的用户测试会议。"
+   ],
+   "message": "我应该为那些会议准备什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m09",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q28",
+   "context": [
+    "user: I'm planning to run the Lisbon Half Marathon in October."
+   ],
+   "message": "Should I do speed work today?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18"
+    ],
+    "types": [
+     "event",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q28",
+   "context": [
+    "user: 我打算参加十月份的里斯本半程马拉松。"
+   ],
+   "message": "我今天应该做速度训练吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m11",
+     "m18"
+    ],
+    "types": [
+     "event",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "health",
+     "hobby",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q29",
+   "context": [],
+   "message": "Can you help me outline a work presentation?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m09",
+     "m19",
+     "m28"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q29",
+   "context": [],
+   "message": "你能帮我列一个工作演示的大纲吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m01",
+     "m09",
+     "m19",
+     "m28"
+    ],
+    "types": [
+     "event",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "schedule",
+     "tech",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q30",
+   "context": [],
+   "message": "Suggest a nice restaurant for our anniversary.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m05",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q30",
+   "context": [],
+   "message": "推荐一家不错的餐厅来庆祝我们的周年纪念日。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m05",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q31",
+   "context": [],
+   "message": "I'm comparing note-taking apps for personal use.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m31",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "preference"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "tech"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q31",
+   "context": [],
+   "message": "我正在比较一些个人用的笔记应用。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m31",
+     "m35"
+    ],
+    "types": [
+     "instruction",
+     "preference"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "tech"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q32",
+   "context": [],
+   "message": "My chest feels tight after that hill sprint.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m36"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q32",
+   "context": [],
+   "message": "跑完那个上坡冲刺后，我的胸口感觉有点紧。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m07",
+     "m36"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "health",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q33",
+   "context": [],
+   "message": "Draft a message to Beatriz's teacher about her participating in a weekend workshop.",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m34"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q33",
+   "context": [],
+   "message": "给贝娅特丽丝的老师起草一条信息，关于她参加周末工作坊的事情。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m34"
+    ],
+    "types": [
+     "instruction",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q34",
+   "context": [],
+   "message": "What should I order at a Japanese restaurant in Lisbon that's safe for me?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q34",
+   "context": [],
+   "message": "在里斯本的日本餐厅里，我应该点什么对我来说安全的菜？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m16",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q35",
+   "context": [],
+   "message": "I have a long run Saturday and dinner with Miguel's parents that night; what should I eat?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m11",
+     "m18",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q35",
+   "context": [],
+   "message": "我周六要长跑，晚上还要和米格尔的父母吃晚餐；我该吃些什么？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m11",
+     "m18",
+     "m25",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q36",
+   "context": [],
+   "message": "When should I schedule my freelance bakery client meeting around Beatriz's school and my Japanese tutoring?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m04",
+     "m13",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "finance",
+     "hobby",
+     "learning",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q36",
+   "context": [],
+   "message": "我应该什么时候安排我的自由职业烘焙客户会议，以避开贝娅特丽丝的学校和我的日语辅导？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m04",
+     "m13",
+     "m28"
+    ],
+    "types": [
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "finance",
+     "hobby",
+     "learning",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q37",
+   "context": [],
+   "message": "Can you make a packing checklist for the Japan trip considering my dietary needs and running gear?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m07",
+     "m11",
+     "m17",
+     "m25",
+     "m30",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q37",
+   "context": [],
+   "message": "能帮我做个去日本的打包清单吗？要考虑我的饮食需求和跑步装备。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m07",
+     "m11",
+     "m17",
+     "m25",
+     "m30",
+     "m32",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "hobby",
+     "schedule",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q38",
+   "context": [],
+   "message": "Is it okay to take Beatriz to the Japanese meetup on Thursday?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m23"
+    ],
+    "types": [
+     "event",
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "learning",
+     "schedule"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q38",
+   "context": [],
+   "message": "星期四带Beatriz去日本人的聚会可以吗？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m23"
+    ],
+    "types": [
+     "event",
+     "profile"
+    ],
+    "tags": [
+     "family",
+     "learning",
+     "schedule"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q39",
+   "context": [],
+   "message": "I want to book a weekend getaway for Miguel and me in Portugal. Where should we go?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m21",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q39",
+   "context": [],
+   "message": "我想为我和Miguel预订一个葡萄牙的周末度假。我们应该去哪里？",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m03",
+     "m21",
+     "m25",
+     "m33"
+    ],
+    "types": [
+     "event",
+     "instruction",
+     "preference",
+     "profile"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "travel",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  },
+  {
+   "id": "q40",
+   "context": [],
+   "message": "What should I make for Sunday dinner that's gluten-free and kid-friendly?",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "en"
+  },
+  {
+   "id": "q40",
+   "context": [],
+   "message": "星期天晚饭做什么？要无麸质的，孩子们也能吃。",
+   "gold": {
+    "needs_recall": true,
+    "relevant_ids": [
+     "m02",
+     "m03",
+     "m16",
+     "m26",
+     "m33"
+    ],
+    "types": [
+     "instruction",
+     "preference",
+     "profile",
+     "project"
+    ],
+    "tags": [
+     "communication",
+     "family",
+     "food",
+     "health",
+     "schedule",
+     "work"
+    ]
+   },
+   "lang": "zh"
+  }
+ ]
+}

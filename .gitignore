@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.llmdoc-tmp/
+*.db
+bench/results/
