@@ -54,10 +54,12 @@ class RecallDecision:
     types: list[str]
     tags: list[str]
     stats: CallStats = field(default_factory=CallStats)
+    # 不同模型的概率尺度不同（如 Clef-flash 整体偏低），召回门阈值允许按模型调整
+    threshold: float = 0.5
 
     @property
     def needs_recall(self) -> bool:
-        return self.recall_prob >= 0.5
+        return self.recall_prob >= self.threshold
 
 
 @dataclass

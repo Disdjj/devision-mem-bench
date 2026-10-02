@@ -1,0 +1,18 @@
+{
+ "dataset": "bench/data/dataset.json",
+ "configs": [
+  "jev",
+  "jev-fanout",
+  "clef",
+  "clef-fanout",
+  "clef-flash",
+  "clef-flash-fanout"
+ ],
+ "langs": [
+  "en",
+  "zh"
+ ],
+ "concurrency": 4,
+ "limit": 0,
+ "generate": false
+}

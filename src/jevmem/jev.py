@@ -1,4 +1,4 @@
-"""基于 Jev (TypeSafe System One) 的判断器。
+"""基于 System One API 的判断器：Jev（TypeSafe），以及 API 兼容的 Clef / Clef-flash（Cloudflare）。
 
 每个判断都是一次 `system_one` 调用：所有问题在同一个 state 上并行求值，
 所以多加几个 tag / 候选 memory 几乎不增加延迟。
@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import time
 
 from typesafe_sdk import AsyncTypeSafeClient, Choice, Noul, Score
@@ -43,10 +44,17 @@ def _pick_tags(probs: dict[str, float]) -> list[str]:
 
 
 class JevDecider:
-    name = "jev"
-
-    def __init__(self, client: AsyncTypeSafeClient | None = None, model: str = config.JEV_MODEL):
+    def __init__(
+        self,
+        client=None,
+        model: str = config.JEV_MODEL,
+        name: str = "jev",
+        max_questions: int | None = None,
+        recall_threshold: float = THRESHOLD,
+    ):
+        """client 只需实现 `system_one(state, questions)` 与 `aclose()`；max_questions 为单次请求的题数上限。"""
         self.client = client or AsyncTypeSafeClient(api_key=config.keys().jev, model=model)
+        self.name, self.max_questions, self.recall_threshold = name, max_questions, recall_threshold
 
     async def aclose(self) -> None:
         await self.client.aclose()
@@ -99,21 +107,37 @@ class JevDecider:
             types=[t for t in MEMORY_TYPES if resp.nouls[f"type_{t}"].noul >= THRESHOLD],
             tags=[t for t in TAGS if resp.nouls[f"tag_{t}"].noul >= THRESHOLD],
             stats=stats,
+            threshold=self.recall_threshold,
         )
 
     async def rank(self, turn: Turn, candidates: list[Memory]) -> RankResult:
         if not candidates:
             return RankResult(scores={})
         # 每条候选一个 Noul：绝对相关性（而不是 Choice 的相对排序），可以对全部候选都说"不相关"
-        questions = {
-            f"m{i}": Noul(
-                instructions={
-                    "memory": {"description": m.description, "details": m.content},
-                    "question": RELEVANCE_INSTRUCTION,
-                }
-            )
-            for i, m in enumerate(candidates)
-        }
-        resp, stats = await self._ask(turn.state(), questions)
-        scores = {m.id: resp.nouls[f"m{i}"].noul for i, m in enumerate(candidates)}
+        size = self.max_questions or len(candidates)
+        batches = [candidates[i : i + size] for i in range(0, len(candidates), size)]
+
+        async def ask_batch(batch: list[Memory]):
+            questions = {
+                f"m{i}": Noul(
+                    instructions={
+                        "memory": {"description": m.description, "details": m.content},
+                        "question": RELEVANCE_INSTRUCTION,
+                    }
+                )
+                for i, m in enumerate(batch)
+            }
+            resp, stats = await self._ask(turn.state(), questions)
+            return {m.id: resp.nouls[f"m{i}"].noul for i, m in enumerate(batch)}, stats
+
+        # 超过单次题数上限时分批并行请求，延迟取最慢的一批
+        results = await asyncio.gather(*(ask_batch(b) for b in batches))
+        scores: dict[str, float] = {}
+        stats = CallStats()
+        for batch_scores, batch_stats in results:
+            scores |= batch_scores
+            stats.input_tokens += batch_stats.input_tokens
+            stats.output_tokens += batch_stats.output_tokens
+            stats.calls += batch_stats.calls
+            stats.latency_s = max(stats.latency_s, batch_stats.latency_s)
         return RankResult(scores=scores, stats=stats)

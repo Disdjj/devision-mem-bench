@@ -6,6 +6,8 @@
 - flash-high : DeepSeek Flash，thinking 开启，reasoning_effort=high
 - flash-nothink : DeepSeek Flash，关闭 thinking（速度最快的 LLM 对照）
 - jev-fanout : 同 jev，但召回时跳过类型/tag 过滤，对全部 memory 一次性做相关性 Noul
+- clef / clef-flash（及 -fanout）: Cloudflare 的 System One 兼容模型，判断逻辑与 jev 完全相同；
+  单次最多 64 道题，rank 超出时分批并行
 所有配置的生成器都是同一个 Flash(low)，端到端延迟的差异只来自判断器。
 
 用法：uv run python -m bench.run_bench [--configs jev flash-low] [--langs en zh] [--limit 10]
@@ -22,7 +24,7 @@ from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
 
-from jevmem.cli import DECIDERS, make_decider
+from jevmem.cli import decider_spec, make_decider, uses_prefilter
 from jevmem.deepseek import DeepSeek, MemoryGenerator
 from jevmem.jev import JevDecider
 from jevmem.memory import MemorySystem
@@ -96,7 +98,7 @@ async def run_config(name: str, dataset: dict, args, out_file) -> None:
     async def one(kind: str, case: dict) -> None:
         # 写入用例用一个空的临时库，避免污染召回用的记忆库
         store = MemoryStore() if kind == "write" else stores[case["lang"]]
-        system = MemorySystem(decider, store, generator, prefilter=name != "jev-fanout")
+        system = MemorySystem(decider, store, generator, prefilter=uses_prefilter(name))
         async with sem:
             start = time.perf_counter()
             try:
@@ -115,7 +117,7 @@ async def run_config(name: str, dataset: dict, args, out_file) -> None:
     await decider.decide_write(Turn(message="hello"))
 
     cases = [("write", c) for c in dataset["write_cases"]] + [("recall", c) for c in dataset["recall_cases"]]
-    cases = [(k, c) for k, c in cases if c["lang"] in args.langs]
+    cases = [(k, c) for k, c in cases if c["lang"] in args.langs and k in args.kinds]
     if args.limit:
         cases = [(k, c) for k, c in cases if int(c["id"][1:]) <= args.limit]
     await asyncio.gather(*(one(k, c) for k, c in cases))
@@ -127,7 +129,8 @@ async def run_config(name: str, dataset: dict, args, out_file) -> None:
 
 async def main(args) -> Path:
     dataset = json.loads(Path(args.dataset).read_text())
-    run_dir = RESULTS / f"{datetime.now():%Y%m%d-%H%M%S}-{Path(args.dataset).stem}"
+    tag = f"-{args.tag}" if args.tag else ""
+    run_dir = RESULTS / f"{datetime.now():%Y%m%d-%H%M%S}-{Path(args.dataset).stem}{tag}"
     run_dir.mkdir(parents=True, exist_ok=True)
     (run_dir / "args.json").write_text(json.dumps(vars(args), indent=1))
     with open(run_dir / "raw.jsonl", "w") as f:
@@ -142,7 +145,9 @@ async def main(args) -> Path:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default=str(DATASET))
-    parser.add_argument("--configs", nargs="+", choices=DECIDERS, default=["jev", "flash-low", "flash-high"])
+    parser.add_argument("--tag", default="", help="结果目录名后缀，并行启动多个进程时用于区分")
+    parser.add_argument("--configs", nargs="+", type=decider_spec, default=["jev", "flash-low", "flash-high"])
+    parser.add_argument("--kinds", nargs="+", choices=["write", "recall"], default=["write", "recall"])
     parser.add_argument("--langs", nargs="+", default=["en", "zh"])
     parser.add_argument("--concurrency", type=int, default=4)
     parser.add_argument("--limit", type=int, default=0, help="只跑编号 <= limit 的用例，用于快速试跑")

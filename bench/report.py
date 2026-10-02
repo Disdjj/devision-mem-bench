@@ -46,8 +46,10 @@ def set_counts(pred: set, gold: set) -> tuple[int, int, int]:
 def cost_usd(cfg: str, stage: str, s: dict | None) -> float:
     if not s:
         return 0.0
-    if cfg.startswith("jev") and stage != "generate":
-        return s["input_tokens"] * config.JEV_PRICE_IN / 1e6
+    base = cfg.partition("@")[0].removesuffix("-fanout")
+    system_one_price = {"jev": config.JEV_PRICE_IN, "clef": config.CLEF_PRICE_IN, "clef-flash": config.CLEF_FLASH_PRICE_IN}
+    if base in system_one_price and stage != "generate":
+        return s["input_tokens"] * system_one_price[base] / 1e6
     return (
         s["input_tokens"] * config.DEEPSEEK_FLASH_PRICE_IN + s["output_tokens"] * config.DEEPSEEK_FLASH_PRICE_OUT
     ) / 1e6
@@ -206,7 +208,7 @@ def build_report(run_dir: str | Path) -> str:
         "- AUC 用概率输出计算；LLM 只给二值结果，其 AUC 等价于平衡准确率，Jev 的概率可以另调阈值。",
         "- 类型 / Tag / 优先级只在 gold 判定需要存储的用例上统计；召回类型 F1 只在 gold 有相关 memory 的用例上统计。",
         "- 命中率：gold 有相关 memory 时至少召回一条正确的比例；干净率：gold 无相关 memory 时什么都没召回的比例。",
-        f"- 成本：Jev ${config.JEV_PRICE_IN}/M 输入；Flash ${config.DEEPSEEK_FLASH_PRICE_IN}/M 输入、"
+        f"- 成本：Jev ${config.JEV_PRICE_IN}/M、Clef ${config.CLEF_PRICE_IN}/M、Clef-flash ${config.CLEF_FLASH_PRICE_IN}/M 输入；Flash ${config.DEEPSEEK_FLASH_PRICE_IN}/M 输入、"
         f"${config.DEEPSEEK_FLASH_PRICE_OUT}/M 输出（高峰、未命中缓存）。",
         "- gold label 由 DeepSeek Pro 生成，对 DeepSeek 系模型可能存在同源偏好。",
     ]

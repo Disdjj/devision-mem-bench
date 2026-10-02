@@ -7,21 +7,45 @@ import asyncio
 import contextlib
 
 from . import config
+from .clef import CLEF_MAX_QUESTIONS, CloudflareSystemOne
 from .deepseek import DeepSeek, DeepSeekDecider, MemoryGenerator
 from .jev import JevDecider
 from .memory import MemorySystem
 from .schema import Turn
 from .store import MemoryStore
 
-DECIDERS = ["jev", "jev-fanout", "flash-nothink", "flash-low", "flash-high"]
+DECIDERS = [
+    "jev", "jev-fanout", "clef", "clef-fanout", "clef-flash", "clef-flash-fanout",
+    "flash-nothink", "flash-low", "flash-high",
+]
 
 
 def make_decider(name: str, llm: DeepSeek):
-    """jev / jev-fanout 共用 JevDecider；flash-<effort> 中 nothink 表示关闭 thinking。"""
-    if name.startswith("jev"):
-        return JevDecider()
-    effort = name.removeprefix("flash-")
+    """System One 系（jev / clef / clef-flash，可带 -fanout 后缀和 @<召回门阈值>）共用 JevDecider；
+    flash-<effort> 是 DeepSeek Flash，其中 nothink 表示关闭 thinking。"""
+    spec, _, threshold = name.partition("@")
+    base = spec.removesuffix("-fanout")
+    opts = {"name": name} | ({"recall_threshold": float(threshold)} if threshold else {})
+    if base == "jev":
+        return JevDecider(**opts)
+    if base in ("clef", "clef-flash"):
+        return JevDecider(CloudflareSystemOne(base), max_questions=CLEF_MAX_QUESTIONS, **opts)
+    effort = spec.removeprefix("flash-")
     return DeepSeekDecider(llm, effort=None if effort == "nothink" else effort)
+
+
+def decider_spec(name: str) -> str:
+    """argparse 校验：基础名必须在 DECIDERS 中，可带 @<阈值>。"""
+    spec, _, threshold = name.partition("@")
+    if spec not in DECIDERS:
+        raise argparse.ArgumentTypeError(f"未知配置 {spec}，可选: {', '.join(DECIDERS)}")
+    if threshold:
+        float(threshold)
+    return name
+
+
+def uses_prefilter(name: str) -> bool:
+    return not name.partition("@")[0].endswith("-fanout")
 
 
 @contextlib.asynccontextmanager
@@ -29,7 +53,7 @@ async def build_system(decider_name: str, store: MemoryStore):
     llm = DeepSeek()
     decider = make_decider(decider_name, llm)
     try:
-        yield MemorySystem(decider, store, MemoryGenerator(llm), prefilter=decider_name != "jev-fanout")
+        yield MemorySystem(decider, store, MemoryGenerator(llm), prefilter=uses_prefilter(decider_name))
     finally:
         if isinstance(decider, JevDecider):
             await decider.aclose()
@@ -73,7 +97,7 @@ def main() -> None:
         p = sub.add_parser(name)
         p.add_argument("message")
         p.add_argument("--context", nargs="*", help="此前的对话，按顺序给出")
-        p.add_argument("--decider", choices=DECIDERS, default="jev")
+        p.add_argument("--decider", type=decider_spec, default="jev", help=f"可选: {', '.join(DECIDERS)}，可带 @<召回门阈值>")
     sub.add_parser("list")
     p = sub.add_parser("delete")
     p.add_argument("id")
